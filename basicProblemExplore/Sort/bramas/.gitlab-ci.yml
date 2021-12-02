@@ -1,0 +1,36 @@
+default:
+  image: berenger/inastemp
+
+
+release-test:
+  script:
+    - wget https://gitlab.inria.fr/bramas/farm-sve/-/raw/master/farm_sve.h?inline=false -O arm_sve.h
+    - CXX=g++ CXXFLAGS="-O1 -I." MARCH="native" source build-script.sh
+    - ./sortSVEtest.g++.exe
+
+code-coverage:
+  script:
+    - wget https://gitlab.inria.fr/bramas/farm-sve/-/raw/master/farm_sve.h?inline=false -O arm_sve.h
+    - CXX=g++ CXXFLAGS="-g -O0 --coverage -DNDEBUG -I." MARCH="native" source build-script.sh
+    - ./sortSVEtest.g++.exe
+    - lcov --directory ./ -c --output-file coverage-rapport.info
+    - lcov --list coverage-rapport.info
+    - genhtml -o ./coverage -t "Coverage arm sve" coverage-rapport.info
+  artifacts:
+    paths:
+      - coverage
+
+
+pages:
+  stage: deploy
+  dependencies:
+    - code-coverage
+  script:
+    - mv coverage/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
+

@@ -1,0 +1,16 @@
+.vscode
+data
+build
+workload
+csvResults
+__pycache__
+.vs
+CMakeSettings.json
+*.bincsr
+.empty
+out
+Workflow/systemCommon.py
+x86workload
+*workload
+**/m5out
+randomGenerator

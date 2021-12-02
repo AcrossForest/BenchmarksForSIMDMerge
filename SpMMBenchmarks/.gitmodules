@@ -1,0 +1,15 @@
+[submodule "json"]
+	path = json
+	url = https://github.com/nlohmann/json
+[submodule "Gem5MagicInst"]
+	path = Gem5MagicInst
+	url = git@gitlab.com:wangbangyan/Gem5MagicInst.git
+[submodule "SpSpInterface"]
+	path = SpSpInterface
+	url = git@gitlab.com:wangbangyan/SpSpInterface.git
+[submodule "eigen"]
+	path = eigen
+	url = https://gitlab.com/libeigen/eigen.git
+[submodule "spspinterfacev2"]
+	path = spspinterfacev2
+	url = git@gitlab.com:wangbangyan/spspinterfacev2.git

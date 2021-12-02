@@ -1,0 +1,17 @@
+kernelList = {
+              "dense": "Dense",
+              # "dense_ns": "SparseMMVecAccum_noSort",
+              # "dense_sortMat": "SparseMMVecAccum_sortMat",
+              "hash": "Hash",
+              "heap": "Heap",
+              "merge": "Merge",
+              "ProposedSIMD": "ProposedSIMD",
+            #   "timOpt": "SparseMMTimOptimized",
+            #   "timVecOpt": "SparseMMTimOptimizedSpSp",
+              "eigen":"Eigen",
+            #   "yuheap":"SparseMMExternalYuHeap",
+            #   "yuhash":"SparseMMExternalYuHash",
+              # "yuhash-ns":"SparseMMExternalYuHash-NoSort",
+            #   "yuhashvec":"SparseMMExternalYuHashVec",
+              # "yuhashvec-ns":"SparseMMExternalYuHashVec-NoSort",
+              }

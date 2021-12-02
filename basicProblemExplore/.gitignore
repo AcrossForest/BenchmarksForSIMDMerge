@@ -1,0 +1,6 @@
+build
+.vscode
+m5out
+*.bin
+__pycache__
+.metals

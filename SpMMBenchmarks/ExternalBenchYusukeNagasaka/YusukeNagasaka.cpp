@@ -1,0 +1,2 @@
+#include "ExternalBenchYusukeNagasaka/YusukeNagasaka.hpp"
+
