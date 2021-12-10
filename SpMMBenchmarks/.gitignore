@@ -9,7 +9,7 @@ CMakeSettings.json
 *.bincsr
 .empty
 out
-Workflow/systemCommon.py
+# Workflow/systemCommon.py
 x86workload
 *workload
 **/m5out
