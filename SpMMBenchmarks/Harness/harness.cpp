@@ -85,7 +85,7 @@ int main(int argv, char **argc)
             return SpMM_Heap(timmerHelper,A, B);
         });
     }
-    else if (workloadDesc.kernelName == "SparseMMTimSortAlike" || workloadDesc.kernelName == "Merge")
+    else if (workloadDesc.kernelName == "SparseMMTimSortAlike" || workloadDesc.kernelName == "MergeOld")
     {
         exec = harness.bench(scalar_repeat,[](TimmerHelper& timmerHelper, const CSR &A, const CSR &B) {
             return SpMM_TimSortAlike(timmerHelper,directVectorAdd,A, B);
@@ -97,7 +97,7 @@ int main(int argv, char **argc)
             return SpMM_TimSortAlike(timmerHelper,instBasedVectorAdd,A, B);
         });
     }
-    else if (workloadDesc.kernelName == "SparseMMTimOptimized" || workloadDesc.kernelName == "MergeOpt")
+    else if (workloadDesc.kernelName == "SparseMMTimOptimized" || workloadDesc.kernelName == "Merge")
     {
         using namespace OptimizedTim;
         exec = harness.bench(scalar_repeat,[](TimmerHelper& timmerHelper, const CSR &A, const CSR &B) {
