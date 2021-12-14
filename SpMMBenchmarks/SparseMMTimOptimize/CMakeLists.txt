@@ -1,7 +1,7 @@
 # add_executable(SparseMMTimSortOptimized
 #     ${CMAKE_CURRENT_SOURCE_DIR}/dummy.cpp
 # )
-set(__Measure_Merge__ "Yes")
+# set(__Measure_Merge__ "Yes")
 
 add_library(SparseMMTimSortOptimized
     INTERFACE
