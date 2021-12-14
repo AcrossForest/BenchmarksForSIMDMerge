@@ -18,7 +18,7 @@
 
 int main(int argv, char **argc)
 {
-    std::cout << "Program starts." << std::endl;
+    // std::cout << "Program starts." << std::endl;
     
     if (argv != 5)
     {
@@ -31,12 +31,12 @@ int main(int argv, char **argc)
     }
     std::cout << std::endl;
 
-    std::cout << "Now I am here." << std::endl;
+    // std::cout << "Now I am here." << std::endl;
     int scalar_repeat = std::stoi(argc[3]);
     int simd_repeat = std::stoi(argc[4]);
     // printf("Now I am here.\n");
     std::string workloadDescFile(argc[1]);
-    std::cout << "Now I am second here." << std::endl;
+    // std::cout << "Now I am second here." << std::endl;
     WorkLoadDescription workloadDesc = loadWorkloadDesc(workloadDescFile);
 
     SpGemmHarness harness(workloadDesc);
@@ -97,7 +97,7 @@ int main(int argv, char **argc)
             return SpMM_TimSortAlike(timmerHelper,instBasedVectorAdd,A, B);
         });
     }
-    else if (workloadDesc.kernelName == "SparseMMTimOptimized")
+    else if (workloadDesc.kernelName == "SparseMMTimOptimized" || workloadDesc.kernelName == "MergeOpt")
     {
         using namespace OptimizedTim;
         exec = harness.bench(scalar_repeat,[](TimmerHelper& timmerHelper, const CSR &A, const CSR &B) {
@@ -215,6 +215,6 @@ int main(int argv, char **argc)
 
     std::string reportFile(argc[2]);
     WriteExecuteReport(exec, reportFile);
-    printf("I finished normallly.\n");
+    // printf("I finished normallly.\n");
     std::cout << argc[2] << std::endl;
 }

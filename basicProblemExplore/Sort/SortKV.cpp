@@ -40,20 +40,20 @@ int main(int argc, char **argv) {
   }
 
   std::cout << "Generated random vector length = " << len << std::endl;
-  std::cout << "Milestone -4" << std::endl;
+  // std::cout << "Milestone -4" << std::endl;
 
   Timmer t;
   // although we should directly use std::vector<ElemType> unsorted(by64(len));  
   // but libstdc++ 10 seems has some bug in memset when sve veclen >= 16, and array size between (1<<14)~(1<<15)
   // We have to make sure the vector length is a multiple of sve veclen...
   size_t adjustedLen = byN(len,1024);
-  std::cout << "Milestone -3" << std::endl;
+  // std::cout << "Milestone -3" << std::endl;
   std::vector<ElemType> unsorted(adjustedLen); 
-  std::cout << "Milestone -2" << std::endl;
+  // std::cout << "Milestone -2" << std::endl;
   std::vector<ValType> Vunsorted(adjustedLen); 
-  std::cout << "Milestone -1" << std::endl;
+  // std::cout << "Milestone -1" << std::endl;
   std::vector<PairType> unsortedP(adjustedLen);
-  std::cout << "Milestone -0" << std::endl;
+  // std::cout << "Milestone -0" << std::endl;
 
   std::vector<ElemType> s(adjustedLen); 
   std::vector<ValType> Vs(adjustedLen); 
@@ -88,7 +88,7 @@ int main(int argc, char **argv) {
   }
 
   std::vector<PairType> sP;
-  std::cout << "Milestone 1" << std::endl;
+  // std::cout << "Milestone 1" << std::endl;
 
   t.selfAssistMeasure("std::stable_sort (kv)",1,baseline,[&](TimmerHelper& t){
     sP = unsortedP;
@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
       mgoldStandard[i] = sP[i].first;
       VmgoldStandard[i] = sP[i].second;
   }
-  std::cout << "Milestone 2" << std::endl;
+  // std::cout << "Milestone 2" << std::endl;
 
   t.selfAssistMeasure("std::sort (kv)",1,baseline,[&](TimmerHelper& t){
     sP = unsortedP;
@@ -114,7 +114,7 @@ int main(int argc, char **argv) {
       goldStandard[i] = sP[i].first;
       VgoldStandard[i] = sP[i].second;
   }
-  std::cout << "Milestone 3" << std::endl;
+  // std::cout << "Milestone 3" << std::endl;
   
 
 
@@ -138,7 +138,7 @@ int main(int argc, char **argv) {
     // std::cout << "Milestone 4.7" << std::endl;
   });
 
-  std::cout << "Milestone 5" << std::endl;
+  // std::cout << "Milestone 5" << std::endl;
   spsp = s;
   Vspsp = Vs;
 

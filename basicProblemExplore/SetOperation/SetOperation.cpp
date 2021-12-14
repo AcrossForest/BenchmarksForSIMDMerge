@@ -34,7 +34,7 @@ int main(int argc, char **argv_raw){
         if(s == "simd") simdTimes = std::stoi(argv[i+1]);
 
   }
-  std::cout << "Begin of program" << std::endl;
+  // std::cout << "Begin of program" << std::endl;
   auto cwd = std::filesystem::current_path();
   std::ifstream file(fileName,std::ifstream::binary | std::ifstream::in);
   if(!file){

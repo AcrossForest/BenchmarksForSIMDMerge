@@ -155,7 +155,7 @@ int main(int argc, char **argv_raw){
         check();
     };
 
-    // standardMeasure("outer",outerJoin,PolicyDummy<PolicyOR>{});
+    standardMeasure("Join-Full-Outer",outerJoin,PolicyDummy<PolicyOR>{});
     standardMeasure("Join-Inner",innerJoin,PolicyDummy<PolicyAND>{});
     standardMeasure("Join-Outer-Ex",xorJoin,PolicyDummy<PolicyXOR>{});
     standardMeasure("Join-Left-Ex",diffJoin,PolicyDummy<PolicyDiff>{});
